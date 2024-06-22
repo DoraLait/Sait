@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотостудия D&S</title>
+    <link rel="stylesheet" type="text/css" href="mastera.css">
+    <script src="js.js"></script>
+    <link rel="icon" href="photo/иконка.jpg" sizes="">
+    <style>
+        /* Добавьте ваши стили CSS здесь */
+
+.titles-box {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center; /* Центрируем содержимое по горизонтали */
+    margin-left: 580px;
+    text-decoration: none;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    text-align: center; /* Центрируем содержимое по горизонтали */
+}
+
+
+
+        .container {
+    text-align: center; /* Центрируем содержимое по горизонтали */
+}
+
+.employee {
+    display: inline-block; /* Располагаем блоки в строчку */
+    margin: 10px;
+    text-align: center; /* Центрируем содержимое внутри блоков */
+    vertical-align: top; /* Выравниваем блоки по верхнему краю */
+    width: 30%; /* Устанавливаем желаемую ширину блоков */
+}
+
+.employee img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+
+
+
+        .container > div {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer-distributed {
+            background: #292c2f;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            width: 100%;
+            text-align: left;
+            font: bold 16px sans-serif;
+            padding: 55px 50px;
+        }
+
+        .footer-left p {
+            color: #ffffff;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer-center p {
+            display: inline-block;
+            color: #ffffff;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .footer-right p.footer-company-about {
+            line-height: 20px;
+            color: #92999f;
+            font-size: 13px;
+            font-weight: normal;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Перейти наверх">Вверх</button>
+    <header>
+        <div class="header__wrapper">
+            <a href="salon.html"><img id="logotip" src="photo\лого.jpg" alt=""></a>       
+            <nav>
+                <ul id="menu">
+                    <li><a href="salon.html">Главная</a></li>
+                    <li><a href="yslugi.html">Услуги</a></li>
+                    <li><a href="Mastera.html">Персонал</a></li>
+                    <li><a href="Obychenie.html">Обучение</a></li>
+                    <li><a href="kontakti.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="link-C"></div>
+    <div class="titles-box">
+        <div class="titles"><p>Руководители</p></div>
+    </div>
+    
+<div class="container">
+    <!-- Повторите этот блок для каждого сотрудника -->
+    <div class="employee">
+        <img src="https://sun9-64.userapi.com/impg/YKW0rMyUkFmEQbV7OrjIOhcrkH8cMBrKZP2Mbw/jB1i87EWX4o.jpg?size=402x604&quality=96&sign=6f448d2d8ae703255aca588a0138c8ab&c_uniq_tag=q8w9wlxhrooQjU6FqIIT2f4icQPEgpW3A4qTFQ9XVns&type=album" alt="Иконка 1" onclick="openModal('modal1')">
+        <h2>Гендиректор Дарья</h2>
+    </div>
+    <div class="employee">
+        <img src="photo/Саша.jpg" alt="Иконка 2" onclick="openModal('modal2')">
+        <h2>Гендиректор Александра</h2>
+    </div>
+</div>
+
+
+        <div class="titlen">Персонал</div>
+        <div class="container">
+        <div>
+            <img src="photo/фотограф.jpg" alt="Иконка 3" onclick="openModal('modal3')">
+            <h2>Фотограф Алина</h2>
+        </div>
+        <div>
+            <img src="photo/фотограф1.jpg" alt="Иконка 4" onclick="openModal('modal4')">
+            <h2>Фотограф Павел</h2>
+        </div>
+        <div>
+            <img src="photo/фотограф2.jpg" alt="Иконка 5" onclick="openModal('modal5')">
+            <h2>Фотограф Мария</h2>
+        </div>
+        <div>
+            <img src="photo/визажист.jpg" alt="Иконка 6" onclick="openModal('modal6')">
+            <h2>Визажист Анна</h2>
+        </div>
+        <div>
+            <img src="photo/визажист1.jpg" alt="Иконка 7" onclick="openModal('modal7')">
+            <h2>Визажист Ольга</h2>
+        </div>
+        <div>
+            <img src="photo/администратор.jpg" alt="Иконка 8" onclick="openModal('modal8')">
+            <h2>Администратор Наталья</h2>
+        </div>
+        <div>
+            <img src="photo/редактор.jpg" alt="Иконка 9" onclick="openModal('modal9')">
+            <h2>Ретушер Антон</h2>
+        </div>
+        <div>
+            <img src="photo/редактор1.jpg" alt="Иконка 10" onclick="openModal('modal10')">
+            <h2>Редактор Кирилл</h2>
+        </div>
+    </div>
+</div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Шевкун Дарья</h2>
+            <p>Директор фотостудии D&S. Опытный фотограф с особым вниманием к деталям и стилю. Специализируется на фэшн-съемках, портретах и свадебной фотографии. Изысканный стиль и чувство прекрасного отличают ее работы, делая каждую фотосессию неповторимой.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Борисюк Александра</h2>
+            <p>Директор фотостудии D&S. Профессионал в области рекламной и художественной фотографии. Ее работы отличаются оригинальным подходом и высоким качеством. Сочетает техническое мастерство с художественным видением, создавая удивительные визуальные истории.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Фотограф Алина</h2>
+            <p>Я - Алина, фотограф, который стремится захватить красоту моментов, полных эмоций и историй. Мои портреты позволяют людям выразить свою уникальность и эмоции, создавая неповторимые истории на каждой фотографии.</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Фотограф Павел</h2>
+            <p>Привет, я Павел. Моя камера - мой инструмент для захвата красоты мира в его разнообразии. Я фокусируюсь на пейзажах, архитектуре и портретах, чтобы рассказать историю каждого места и каждого человека через мой объектив.</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Фотограф Мария</h2>
+            <p>Меня зовут Мария, и я фотограф, специализирующийся на захвате эмоций и индивидуальности через портреты. Мои фотографии помогают людям выразить свою уникальность и становятся частью их личных историй.</p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>Визажист Анна</h2>
+            <p>Привет! Меня зовут Анна, и я визажист с опытом работы над различными проектами. Мое портфолио включает в себя разнообразные образы, которые подчеркивают естественную красоту каждого клиента. Я стремлюсь создавать макияж, который не только преображает, но и подчеркивает уникальность каждого человека.</p>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <h2>Визажист Ольга</h2>
+            <p>Привет! Я Ольга, визажист с особым вниманием к деталям и индивидуальному подходу к каждому клиенту. В моем портфолио вы найдете широкий спектр стилей и техник макияжа, от естественного до выразительного. Моя цель - помочь каждому человеку почувствовать себя уверенно и прекрасно в любой ситуации.</p>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <h2>Администратор Наталья</h2>
+            <p>Привет! Меня зовут Наталья, и я администратор с опытом работы в организации и координации различных проектов. В моем портфолио вы найдете примеры моей работы, демонстрирующие мои навыки в планировании, координации и обеспечении эффективного функционирования бизнеса или офиса.</p>
+        </div>
+    </div>
+
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal9')">&times;</span>
+            <h2>Ретушер Антон</h2>
+            <p>Привет! Я Антон, ретушер с опытом работы над фотографиями различных жанров. Мое портфолио включает в себя примеры фотографий до и после ретуши, демонстрируя мои навыки в улучшении качества изображений, сохраняя естественность и красоту моделей.</p>
+        </div>
+    </div>
+
+    <div id="modal10" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal10')">&times;</span>
+            <h2>Редактор Кирилл</h2>
+            <p>Привет! Я Кирилл, редактор с опытом работы над фотографиями различных жанров и форматов. Мое портфолио включает в себя примеры моей работы, демонстрирующие мои навыки в редактировании, коррекции и улучшении фотографий для различных целей - от журнальных статей до рекламных материалов.</p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        // Показать кнопку при прокрутке вниз на 20px от верхней части документа
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            let mybutton = document.getElementById("myBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // При нажатии на кнопку, прокрутка вверх
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Открыть модальное окно
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Закрыть модальное окно
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
+    <!-- Add more modal windows for other employees -->
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>Фотостудия <span>D&S</span></h3>
+            <p class="footer-company-name">Фотостудия D&S © 2024</p>
+        </div>
+        <div class="footer-center"> 
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>ул. Брайтон-Бич, 8</span> г. Нью-Йорк, США</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+375 (29) 507 - 92 - 98</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Часы работы</span>
+                Пн-Вс <b>|</b> 10:30-20:00
+            </p>    
+            <p class="footerca">Информация на данном интернет-сайте носит исключительно ознакомительный характер и ни при каких условиях не является публичной офертой. Цены на сайте носят ознакомительный характер и не являются публичным предложением.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to open modal window
+        function openModal(id) {
+            var modal = document.getElementById(id);
+            modal.style.display = "block";
+        }
+
+        // Function to close modal window
+        function closeModal(id) {
+            var modal = document.getElementById(id);
+            modal.style.display = "none";
+        }
+
+        // Function to scroll to the top of the page
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

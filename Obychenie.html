@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотостудия D&S</title>
+    <link rel="stylesheet" type="text/css" href="Obychenie.css">
+    <script src="js.js"></script>
+    <link rel="icon" href="photo/иконка.jpg" sizes="">
+    <style>
+        /* Стили для модального окна */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .catalog {
+            padding: 20px;
+        }
+
+        .catalog {
+            margin-top: 20px;
+        }
+
+        .catalog__wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .varnin {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .catalog__content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .service-block {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-block img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-block p {
+            margin-top: 10px;
+        }
+
+        .catalog__wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .varnin {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .catalog__content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .service-block {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-block img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-block p {
+            margin-top: 10px;
+        }
+
+        .service-block:hover img {
+            transform: scale(1.05);
+        }
+
+        .course-registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-button {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-policy {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #28a745;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Вверх</button>
+    <header>
+        <div class="header__wrapper">
+            <a href="salon.html"><img id="logotip" src="photo/лого.jpg" alt="Логотип"></a>
+            <nav>
+                <ul id="menu">
+                    <li><a href="salon.html">Главная</a></li>
+                    <li><a href="yslugi.html">Услуги</a></li>
+                    <li><a href="Mastera.html">Персонал</a></li>
+                    <li><a href="Obychenie.html">Обучение</a></li>
+                    <li><a href="kontakti.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Услуга</h2>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <div class="catalog">
+        <div class="catalog__wrapper">
+            <div class="varnin">
+                <h2>Обучение</h2>
+            </div>
+            <div class="catalog__content" id="catalog-content">
+                <div class="service-block" onclick="openModal(1)">
+                    <img src="https://i.pinimg.com/236x/81/03/0f/81030f54e5915598efdd2ba2aaf89df2.jpg" alt="Услуга 1">
+                    <p>Фотография с нуля</p>
+                </div>
+                <div class="service-block" onclick="openModal(2)">
+                    <img src="https://i.pinimg.com/236x/a2/4c/f3/a24cf3359dec67376d8c42c311243037.jpg" alt="Услуга 2">
+                    <p>Ретушь для фотографа</p>
+                </div>
+                <div class="service-block" onclick="openModal(3)">
+                    <img src="https://i.pinimg.com/564x/4d/0d/cc/4d0dcc4f71fa785d9062528ded369a3b.jpg" alt="Услуга 3">
+                    <p>Capture One</p>
+                </div>
+                <div class="service-block" onclick="openModal(4)">
+                    <img src="https://i.pinimg.com/474x/f9/ba/13/f9ba1370fc44fc1bf75e9f3c15386e14.jpg" alt="Услуга 4">
+                    <p>Фотография PRO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-registration-form">
+        <h2 class="form-title">Записаться на курс или получить бесплатную консультацию</h2>
+        <form id="courseForm" method="POST">
+            <!-- Поля формы -->
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-button">
+                <!-- Изменен тип кнопки с submit на button -->
+                <button type="button" onclick="submitForm()">Записаться на курс</button>
+            </div>
+            <p class="form-policy">
+                Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с правилами пользования Платформой и публичной офертой.
+            </p>
+        </form>
+        <div class="success-message" id="successMessage">Спасибо! Ваша заявка отправлена.</div>
+    </div>
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>Фотостудия <span>D&S</span></h3>
+            <p class="footer-company-name">Фотостудия D&S © 2024</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <img class="icont2" src="photo/locationbe.png" alt="Location Icon">
+                <i class="fa fa-map-marker"></i>
+                <p><span>ул. Брайтон-Бич, 8</span> г. Нью-Йорк, США</p>
+            </div>
+            <div>
+                <img class="icont1" src="photo/phone.png" alt="Phone Icon">
+                <i class="fa fa-phone"></i>
+                <p>+375 (29) 507 - 92 - 98</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Часы работы</span>
+                Пн-Вс <b>|</b> 10:30-20:00
+            </p>
+            <p class="footerca">Информация на данном интернет-сайте носит исключительно ознакомительный характер и ни при каких условиях не является публичной офертой. Цены на сайте носят ознакомительный характер и не являются публичным предложением.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var faqButtons = document.querySelectorAll('.faq-button');
+
+            faqButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var content = this.nextElementSibling;
+                    if (content.style.display === 'block' || content.style.display === '') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                });
+            });
+        });
+
+        // Функция для открытия модального окна и отображения информации о выбранной услуге
+        function openModal(serviceId) {
+            var modal = document.getElementById("modal");
+            var modalTitle = document.getElementById("modal-title");
+            var modalContent = document.getElementById("modal-content");
+
+            // Определение информации о выбранной услуге по её идентификатору
+            var serviceInfo = getServiceInfo(serviceId);
+
+            // Установка заголовка модального окна
+            modalTitle.innerText = serviceInfo.title;
+
+            // Вставка содержимого информации в модальное окно
+            modalContent.innerHTML = serviceInfo.description;
+
+            // Отображение модального окна
+            modal.style.display = "block";
+        }
+
+        // Функция для закрытия модального окна
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+
+        // Функция для получения информации о выбранной услуге (заголовок и описание)
+        function getServiceInfo(serviceId) {
+            // Здесь можно использовать switch или другие способы получения информации
+            // Мы просто воспроизведем пример с фиктивными данными
+            switch (serviceId) {
+                case 1:
+                    return {
+                        title: "Фотография с нуля",
+                        description: "Вы узнаете, как фотографировать на любую камеру и обрабатывать изображения. Научитесь на базовом уровне работать со светом и цветом: Введение в фотографию, Мобильная фотография, Как выбрать камеру, Выдержка, Диафрагма, Экспозиция, Свет, Цвет, Фокусировка и экспозамер, Баланс белого и температура, Композиция, Обработка, Вдохновение для фотографа, Бонусный модуль, Плёночная фотография, Работа с готовыми фото."
+                    };
+                case 2:
+                    return {
+                        title: "Ретушь для фотографа",
+                        description: "Научитесь качественно обрабатывать изображения в Photoshop. Сможете превращать обычные фотографии в художественные снимки: Пейзаж кистями, Пейзаж, Корректирующие слои и маски, Частотное разложение, Частотное разложение как инструмент работы с текстурой, Продвинутый подход к работе с инструментами ретуши, Техника осветления и затемнения Dodge&Burn, Ретушь цвета, Экшены, Настройка процесса."
+                    };
+                case 3:
+                    return {
+                        title: "Capture One",
+                        description: "С нуля освоите популярную программу для работы с фотографиями. Научитесь отбирать кадры и делать цветокоррекцию в процессе съёмки: Введение в обработку изображений, Начало работы с Capture One, съёмка в компьютер, Экспозиция и цвет, Нюансы профессиональной работы в Capture One, Работа с цветом, Работа со стилями и плагинами, Автоматизация и финализация процессов."
+                    };
+                // Продолжаем для остальных услуг
+                default:
+                    return {
+                        title: "Фотография PRO",
+                        description: "Научитесь создавать концепцию для съёмки, на продвинутом уровне работать со светом, выстраивать композицию кадра и обрабатывать фото. Узнаете, как правильно составить портфолио и где находить заказы: Введение в профессию, Экспозиция PRO, Работа с моделью, Предметная и интерьерная съёмка, Психология и фотография, Юридические аспекты, Создание портфолио, Обработка PRO."
+                    };
+            }
+        }
+
+        // Функция для отправки данных формы курса
+        function submitForm() {
+            // Получение данных формы
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+
+            // Здесь вы можете добавить вашу логику отправки данных на сервер
+            // Например, отправка данных с помощью AJAX
+
+            // Показ сообщения об успешной отправке
+            var successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+
+            // Сброс формы
+            document.getElementById('courseForm').reset();
+        }
+
+        // Функции для выплывающего окна "Оплата курсов"
+        function openPaymentPopup() {
+            document.getElementById("payment-popup").classList.add("active");
+        }
+
+        function closePaymentPopup() {
+            document.getElementById("payment-popup").classList.remove("active");
+        }
+
+        // Функция для отправки данных формы оплаты курсов
+        function submitPaymentForm(event) {
+            event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+            // Добавляем вашу логику для отправки данных
+
+            // После успешной отправки данных выводим сообщение
+            alert('Запись на курс успешно оформлена!');
+
+            // Очищаем форму оплаты курсов
+            document.getElementById('paymentForm').reset();
+        }
+
+        // Добавляем обработчик события отправки формы
+        document.getElementById('paymentForm').addEventListener('submit', submitPaymentForm);
+    </script>
+</body>
+</html>

@@ -1,0 +1,715 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('photo/фон3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#link-C {
+	padding-top: 55px;
+	margin-top: 0px;
+	-webkit-background-clip: content-box;
+	background-clip: content-box;
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    z-index: 1;
+  }
+.header__wrapper{
+    
+   margin-right: 220px;
+   display: flex;
+   justify-content:center;
+}
+#logotip{
+    width: 220px;
+    height:65px;
+    margin-top: -15px;
+}
+
+ul#menu li{
+    display:inline-block;
+}
+#menu, #menu li {
+    width: auto;
+    margin: 0 auto;
+    height: auto;
+}
+#menu {
+    text-align:center;
+    background-color: #ffffff;
+}
+#menu li{
+    padding: 0px;
+    margin: 0px;
+    display:inline-block; /* расположить пункты горизонтально */
+    text-align: center; /* текст горизонтально по центру */
+}
+#menu a {
+    padding: 10px 17px ;  /* задаем внутренние отступы */
+    color: #000000; /* цвет текста */
+    font-size:200%;
+    text-decoration: none; /* убрать нижнее подчёркивание у ссылок */
+}
+#menu a:hover {
+    background: #d6dbd3; /* фон пунктов при наведении */
+}
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 30px; /* Place the button at the bottom of the page */
+    right: 40px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #ffd280; /* Set a background color */
+    color: rgb(0, 0, 0); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+ /*--------------------------------------------------------------------------*/
+.title {
+    font-size: 35px;
+    color: #000000;
+    font-weight: bold; 
+    text-transform: uppercase;
+    line-height: 0.5;
+    text-align: center;
+    position: relative;
+    background: #ffffff;
+    padding: 0px 20px;
+   text-shadow: 2px 4px 6px rgba(75, 75, 75, 0.45); /* тень заголовка */
+  }
+  .title span {
+    background: #ffffff;
+    display: inline-block;
+    padding: 5px 20px;
+    position: relative;
+  }
+  .title:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;        
+    width: 100%;
+    height: 3px; /* ширина линии */
+    background: #000000; /* цвет линии */
+    box-shadow: 2px 4px 6px rgba(54, 54, 54, 0.45); /* тень линии */
+  }
+  .title__salon{
+    line-height: 1.2;
+    font-family:Georgia, serif;
+    font-size:40px;
+    color: black;
+    text-shadow:
+    0 0 6px #ffffff,
+    0 0 10px #ffffff,
+    0 0 12px #fff4bc,
+    0 0 15px #ffeaa3,
+    0 0 18px #eccda9,
+    0 0 20px #af977b,
+    0 0 25px #85735c;
+}
+
+.text__salon{
+    font-family:Georgia, serif;
+    font-size:20px;
+}
+
+.footer-distributed{
+	background: rgb(126, 106, 88);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 18px Georgia, serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px Georgia, serif, cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  rgb(214, 191, 117);
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  rgb(235, 203, 135);
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #000000;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin-top: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin-top: 0px;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:16px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  rgb(196, 178, 98);
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 24%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0;
+}
+.footerca{
+    line-height: 15px;
+	color:  #ffffff;
+	font-size: 13px;
+	font-weight: normal;
+
+    letter-spacing: 0.3px;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.icont1{
+    margin-left: -30px;
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+}
+.icont2{
+    margin-left: -36px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+body {
+    background-color: #ffe2ab; /* Light yellow background color */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title__salon {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    font-size: 24px;
+}
+
+#bookingForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#bookingForm label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+#bookingForm input, #bookingForm select, #bookingForm button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#bookingForm button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+#bookingForm button:hover {
+    background-color: #555;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+
+.map-container { 
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.1);
+    margin-left: 280px;
+    z-index: 0;
+    width: 900px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    height: 400px;
+}
+
+.faq-container {
+    width: 570px;
+    padding: 15px 0px;   
+    padding-top: 25px; padding-left: 70px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.faq-button {
+    display: block;
+    width: 500px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.faq-content {
+    display: none;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.footer-distributed{
+	background: rgba(22, 20, 19, 0.921);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 18px Georgia, serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px Georgia, serif, cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  rgb(214, 191, 117);
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  rgb(235, 203, 135);
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #000000;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin-top: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin-top: 0px;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:16px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  rgb(196, 178, 98);
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 24%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0;
+}
+.footerca{
+    line-height: 15px;
+	color:  #ffffff;
+	font-size: 13px;
+	font-weight: normal;
+
+    letter-spacing: 0.3px;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#logotip {
+    width: 150px;
+}
+
+.icont1, .icont2 {
+    width: 20px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.inf {
+    margin-left: 500px;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+
+    .map-container, .faq-container {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+/* КНОПКА ДЛЯ КОНТАКТОВ */
+
+        /* Стили для кнопки "Контакты" */
+        .contact-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Изменено на left */
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        
+        .contact-btn:hover {
+            background-color: #0e6512;
+        }
+
+        /* Стили для выплывающего окна */
+        .contact-popup {
+            position: fixed;
+            bottom: 100px; /* отступ от кнопки "Контакты" */
+            left: -250px; /* начальное положение за пределами экрана */
+            width: 200px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease; /* изменено на left */
+            border-radius: 10px;
+        }
+
+        .contact-popup.active {
+            left: 20px; /* положение слева на экране */
+        }
+
+        /* Стили для ссылок в выплывающем окне */
+        .contact-link {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+  
+
+
+        /* КНОПКА ДЛЯ КОНТАКТОВ */
+
+        /* Стили для кнопки "Контакты" */
+        .payment-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 80px; /* Изменено на left */
+            background-color: #ffd6a0;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-btn:hover {
+            background-color: #a05645;
+        }
+
+        /* Стили для выплывающего окна */
+        .payment-popup {
+            position: fixed;
+            bottom: 100px; /* отступ от кнопки "Контакты" */
+            left: -250px; /* начальное положение за пределами экрана */
+            width: 200px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease; /* изменено на left */
+            border-radius: 10px;
+        }
+
+        .payment-popup.active {
+            left: 20px; /* положение слева на экране */
+        }
+
+        /* Стили для ссылок в выплывающем окне */
+        .payment-link {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+
+         /* Стили для формы оплаты */
+         #paymentForm label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #paymentForm input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #paymentForm button {
+            background-color: #2196F3; /* Синий цвет */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #paymentForm button:hover {
+            background-color: #1e88e5;
+        }
